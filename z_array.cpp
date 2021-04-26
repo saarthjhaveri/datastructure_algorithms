@@ -39,7 +39,7 @@ vector<int> z_function(string s) {
         while (i + z[i] < n && s[z[i]] == s[i + z[i]])
             ++z[i];
         if (i + z[i] - 1 > r)
-            l = i, r = i + z[i] - 1;
+            l  = i, r = i + z[i] - 1;
     }
     return z;
 }

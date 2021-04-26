@@ -6,4 +6,4 @@ Data structures:
 
 
 Algorithms:
-1)Z-algorithm (patter matching)
+1)Z-algorithm (pattern matching)

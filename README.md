@@ -8,4 +8,6 @@ Data structures:
 
 Algorithms:
 1)Z-algorithm (pattern matching)
-2)Kadanes 
+2)Rabin karp (pattern matching)
+3)Kadanes 
+4)Seives 

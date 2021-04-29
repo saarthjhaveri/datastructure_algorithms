@@ -11,3 +11,4 @@ Algorithms:
 2)Rabin karp (pattern matching)
 3)Kadanes 
 4)Seives 
+5)Segmented seives 

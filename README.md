@@ -12,3 +12,4 @@ Algorithms:
 3)Kadanes 
 4)Seives 
 5)Segmented seives 
+6)Mo's algorithm

@@ -13,3 +13,5 @@ Algorithms:
 4)Seives 
 5)Segmented seives 
 6)Mo's algorithm(query-precompute)
+7)LIS 
+8)LCS

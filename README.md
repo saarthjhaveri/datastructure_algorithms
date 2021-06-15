@@ -15,3 +15,4 @@ Algorithms:
 6)Mo's algorithm(query-precompute)
 7)LIS 
 8)LCS
+9)count sort

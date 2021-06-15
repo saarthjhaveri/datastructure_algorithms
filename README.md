@@ -16,3 +16,7 @@ Algorithms:
 7)LIS 
 8)LCS
 9)count sort
+10)insertion sort
+11)bubble sort
+12)selection sort 
+

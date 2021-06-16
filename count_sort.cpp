@@ -1,7 +1,3 @@
- 
-// Counting sort is a sorting technique based on keys between a specific range. It works by counting the number of objects having distinct key values (kind of hashing).
-//   Then doing some arithmetic to calculate the position of each object in the output sequence.
-
 #include<stdio.h>
 #include<algorithm>
 #include<vector>
@@ -33,16 +29,31 @@ int maxm= 0;
     }
 
   
-    //now make the final array which will correspond to the sorted array
-    vector<int>final;
-  
+    //find the possible position of array elements in freq array;
 
-    for(int i=0;i<=maxm;i++)
+
+    vector<int>position(maxm+1);
+    position[0]= freq[0];
+
+    for(int i=1;i<=maxm;i++)
     {
-        while(freq[i]--)
-        {
-            final.push_back(i);
-        }
+        position[i]= position[i-1]+freq[i];
+    }
+
+   for(int i=0;i<=maxm;i++)
+   {
+       position[i]--;
+   }
+
+
+
+    //now make the final array which will correspond to the sorted array acc to the indice 
+    vector<int>final(n);
+    
+    for(int i=0;i<n;i++)
+    {
+        final[position[arr[i]]]=arr[i];
+        position[arr[i]]--;
     }
 
 

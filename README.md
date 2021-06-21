@@ -19,4 +19,5 @@ Algorithms:
 10)insertion sort
 11)bubble sort
 12)selection sort 
+13)quicksort
 

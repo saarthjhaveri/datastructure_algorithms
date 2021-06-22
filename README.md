@@ -21,3 +21,4 @@ Algorithms:
 12)selection sort 
 13)quick sort
 14)merge sort 
+15)ternary search

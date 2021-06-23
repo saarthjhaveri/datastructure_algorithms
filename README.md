@@ -22,3 +22,5 @@ Algorithms:
 13)quick sort
 14)merge sort 
 15)ternary search
+16)power exponentation(recursive)
+17)power exponentation(bitmask)

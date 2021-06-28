@@ -23,5 +23,6 @@ Algorithms:
 14)merge sort 
 15)ternary search
 16)power exponentation(recursive)
-17)power exponentation(bitmask)
+17)power exponentation(bitmask) (left)
 18)quick_select
+19)moores voting algorithm

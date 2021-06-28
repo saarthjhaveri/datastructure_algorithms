@@ -24,3 +24,4 @@ Algorithms:
 15)ternary search
 16)power exponentation(recursive)
 17)power exponentation(bitmask)
+18)quick_select

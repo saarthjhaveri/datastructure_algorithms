@@ -26,3 +26,4 @@ Algorithms:
 17)power exponentation(bitmask) (left)
 18)quick_select
 19)moores voting algorithm
+20)fermets_little_thoerem

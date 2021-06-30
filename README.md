@@ -27,3 +27,4 @@ Algorithms:
 18)quick_select
 19)moores voting algorithm
 20)fermets_little_thoerem
+21)dutch_national_flag sort

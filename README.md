@@ -28,3 +28,4 @@ Algorithms:
 19)moores voting algorithm
 20)fermets_little_thoerem
 21)dutch_national_flag sort
+22)KMP (pattern matching)

@@ -4,7 +4,8 @@ Boiler plate for all the useful data structures and algorithms:-
 Data structures:
 1)tries 
 2)policy based data structure (pbds)
-
+3)stack
+4)queue
 
 Algorithms:
 1)Z-algorithm (pattern matching)

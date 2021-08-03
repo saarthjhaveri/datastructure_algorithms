@@ -33,3 +33,6 @@ Algorithms:
 23)Get_min_stack
 24)Dijkstra 
 25)Floyd Warshall
+26)Prims
+27)BellmanFord
+28)Kosaraju

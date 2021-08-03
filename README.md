@@ -36,3 +36,4 @@ Algorithms:
 26)Prims
 27)BellmanFord
 28)Kosaraju
+29)Kahns algorithm

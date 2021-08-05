@@ -31,9 +31,10 @@ Algorithms:
 21)dutch_national_flag sort
 22)KMP (pattern matching)
 23)Get_min_stack
-24)Dijkstra 
-25)Floyd Warshall
-26)Prims
-27)BellmanFord
-28)Kosaraju
-29)Kahns algorithm
+24)Dijkstra (single src distance)
+25)Floyd Warshall (all nodes distance)
+26)Prims (MST)
+27)BellmanFord (single src distance)
+28)Kosaraju (Strongly connected comp)
+29)Kahns algorithm (Indegree / Toposort)
+30)Kruskals (MST)

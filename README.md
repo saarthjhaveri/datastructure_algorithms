@@ -38,3 +38,4 @@ Algorithms:
 28)Kosaraju (Strongly connected comp)
 29)Kahns algorithm (Indegree / Toposort)
 30)Kruskals (MST)
+31)Huffman Encoding

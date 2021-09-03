@@ -39,3 +39,4 @@ Algorithms:
 29)Kahns algorithm (Indegree / Toposort)
 30)Kruskals (MST)
 31)Huffman Encoding
+32)Digit_DP 

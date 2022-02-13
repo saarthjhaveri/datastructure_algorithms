@@ -1,9 +1,9 @@
+
 #include<bits/stdc++.h>
 
 using namespace std;
 
 //given some queries and an array , find the sum of range given in query1->[L,R] and in query2->update the idx of array \
-
 
 void build_segtree(int s, int e, int idx, vector<int>& A, vector<int>& segtree) {
 
@@ -31,18 +31,19 @@ void build_segtree(int s, int e, int idx, vector<int>& A, vector<int>& segtree) 
 int range_query(int qs, int qe, int s, int e, int idx, vector<int>& segtree)
 {
 
+  //no overlap
+    if (qe<s || qs>e)
+    {
+
+        return 0;
+    }
 
     //complete overlap
     if (qs <= s && qe >= e)
     {
         return segtree[idx];
     }
-    //no overlap
-    if (qe<s || qs>e)
-    {
-
-        return 0;
-    }
+  
     //partial overlap
 
     int mid = (s + e) / 2;

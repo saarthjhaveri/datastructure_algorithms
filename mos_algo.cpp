@@ -1,126 +1,155 @@
-#include<vector>
-#include<array>
-#include<iostream>
-#include<map>
-#include<set>
+#include<bits/stdc++.h>
+#define REP(i,n) for (int i = 1; i <= n; i++)
+#define mod 1000000007
+#define pb push_back
+#define ff first
+#define ss second
+#define ii pair<int,int>
+#define vi vector<int>
+#define vii vector<ii>
+#define lli long long int
+#define INF 1000000000
+#define endl '\n'
+// #define BLOCK 555
+const double PI = 3.141592653589793238460;
+typedef std::complex<double> Complex;
+typedef std::valarray<Complex> CArray;
 
 using namespace std;
+struct query {
+    int l;
+    int r;
+    int i;
+};
+query Q[200006];
+int ar[200007], ans[200006];
+int fre[200007];
+int cnt = 0;
+
+int BLOCK;
+
+bool comp(query a, query b)
+{
+    if (a.l / BLOCK != b.l / BLOCK)
+        return a.l / BLOCK < b.l / BLOCK;
+
+    return a.r < b.r;
+}
+
+void add(int pos)
+{
+    fre[ar[pos]]++;
+    if (fre[ar[pos]] == 1)
+        cnt++;
+}
+
+void remove(int pos)
+{
+    fre[ar[pos]]--;
+    if (fre[ar[pos]] == 0)
+        cnt--;
+}
 
 
-// Refer ques on gfg :- 
-https://practice.geeksforgeeks.org/problems/interesting-queries4742/1/?category[]=Map&category[]=Map&problemStatus=unsolved&difficulty[]=2&page=1&query=category[]MapproblemStatusunsolveddifficulty[]2page1category[]Map#
+
+void compress(int n) {
+
+
+#define arr ar
+    map<int, int>mymap;
+
+    int j = 1;
+
+    int b[n];
+
+    for (int i = 0;i < n;i++)
+    {
+        b[i] = arr[i];
+    }
+
+
+    sort(arr, arr + n);
+
+    for (int i = 0;i < n;i++)
+    {
+        if (mymap.find(arr[i]) != mymap.end())continue;
+
+        mymap[arr[i]] = j++;
+    }
+
+
+    for (int i = 0;i < n;i++)
+    {
+        arr[i] = mymap[b[i]];
+    }
+
+
+
+
+
+
+}
+
 int main()
 {
-    
-    int n,k,q;  
-    cin>>n>>q>>k;
+    ios::sync_with_stdio(false);
+    cin.tie(0);
+    cout.tie(0);
 
 
-    int arr[n];
-    for(int i=0;i<n;i++)
+    int n, q;
+    cin >> n;
+    cin >> q;
+    for (int i = 0;i < n;i++)
+        cin >> ar[i];
+
+
+    compress(n);
+
+
+
+    int rootn = 1;
+    int i = 1;
+
+
+    while (i * i <= n)
     {
-        cin>>arr[i];
+        rootn = i;
+        i++;
+    }
+    BLOCK = rootn;
+
+
+
+    for (int i = 0;i < q;i++) {
+        cin >> Q[i].l >> Q[i].r;
+        Q[i].i = i, Q[i].l--, Q[i].r--;
     }
 
-    int ans[q];
+    sort(Q, Q + q, comp);
 
-    int queries_l[q],queries_r[q];
-    for(int i=0;i<q;i++)
+    //why ML = 0 , and MR = -1?
+    int ML = 0, MR = -1;
+    for (int i = 0;i < q;i++)
     {
-        cin>>queries_l[i];
-        cin>>queries_r[i];
+        int L = Q[i].l;
+        int R = Q[i].r;
 
-        queries_l[i]--;
-        queries_r[i]--;
+        while (ML > L)
+            ML--, add(ML);
+
+        while (MR < R)
+            MR++, add(MR);
+
+        while (ML < L)
+            remove(ML), ML++;
+
+        while (MR > R)
+            remove(MR), MR--;
+
+        ans[Q[i].i] = cnt;
     }
 
-    pair<int,pair<int,int> >pairt[q];
-
-    for(int i=0;i<q;i++)
-    {
-        pairt[i].first=queries_l[i];
-
-        pairt[i].second= make_pair(queries_r[i],i);
-    }
-
-    
-    sort(pairt,pairt+q);
-
-  
-
-
-
-    int l=pairt[0].first;
-    int r=pairt[0].second.first;
-
-    map<int,int>mymap;
-    int count=0;
-    for(int i=l;i<=r;i++)
-    {
-        mymap[arr[i]]++;
-        if(mymap[arr[i]]==k)
-        {
-            count++;
-        }
-    }
-
-
-
-   
-    ans[pairt[0].second.second]=count;
-    for(int i=1;i<q;i++)
-    {
-       while(l<pairt[i].first)
-       {
-           if(mymap[arr[l]]==k)
-           {
-               count--;
-           }
-           mymap[arr[l]]--;
-           l++;
-       }
-
-       if(pairt[i].second.first>r)
-       {
-           r++;
-           while(r<=pairt[i].second.first)
-           {
-
-               mymap[arr[r]]++;
-               if(mymap[arr[r]]==k)
-               {
-                   count++;
-               }
-               r++;
-           }
-           r--;
-       }
-       else
-       {
-       
-           while(r>pairt[i].second.first)
-           {
-               
-               if(mymap[arr[r]]==k)
-               {
-                
-                   count--;
-               }
-               mymap[arr[r]]--;
-               r--;
-           }
-       }
-      
-
-
-       ans[pairt[i].second.second]=count;
-    }
-
-
-    for(int i=0;i<q;i++){
-        cout<<ans[i]<<" ";
-    }
-
-
-
+    for (int i = 0;i < q;i++)
+        cout << ans[i] << '\n';
 }

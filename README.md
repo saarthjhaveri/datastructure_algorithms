@@ -40,3 +40,5 @@ Algorithms:
 30)Kruskals (MST)
 31)Huffman Encoding
 32)Digit_DP 
+33)sparse_table
+34)Coordinate compression

@@ -42,3 +42,4 @@ Algorithms:
 32)Digit_DP 
 33)sparse_table
 34)Coordinate compression
+35)Binary lifting

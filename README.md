@@ -43,3 +43,4 @@ Algorithms:
 33)sparse_table
 34)Coordinate compression
 35)Binary lifting
+36)Prime factorization

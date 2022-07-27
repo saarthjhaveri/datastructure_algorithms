@@ -12,12 +12,20 @@ we can access in between elements of set , using find_by_order and find_by_key f
 using namespace __gnu_pbds;
 using namespace std;
 
-#define pbds tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>
+//ordered_set and multi_ordered_set as pbds  
+#define ordered_set tree<int, null_type, less<int>, rb_tree_tag, tree_order_statistics_node_update>
+#define ordered_multi_set tree<int, null_type, less_equal<int> ,rb_tree_tag, tree_order_statistics_node_update>
+//member functions :
+//1.  <var_name>.order_of_key(k) : number of elements *strictly* less than k
+//2.  <var_name>.find_by_order(k) : k-th element in the set
+
+
+
 
 int main()
 {
 
-    pbds p;
+    ordered_set p;
     p.insert(5);
     p.insert(3);
     p.insert(2);
